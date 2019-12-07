@@ -1,4 +1,6 @@
- <!-- Fontfaces CSS-->
+    <!-- Favicon -->
+    <link rel="icon" href="<?php echo base_url() ?>/assets/jon/jo.png">
+    <!-- Fontfaces CSS-->
     <link href="<?php echo base_url() ?>/assets/css/font-face.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url() ?>/assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url() ?>/assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">

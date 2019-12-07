@@ -11,6 +11,7 @@ class Acara extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->model('M_acara');
+        $this->load->model('M_peserta');
 
 		$idm=$this->session->userdata('idm');
 		if ($idm==null)
@@ -56,7 +57,7 @@ class Acara extends CI_Controller {
         if ($master=1)
         {
             $data['nonmas']=1;
-            $data['acara']=$this->M_acara->tampilsemuaacarainfo()->result();
+            $data['acara']=$this->M_acara->tampilsemuaacara()->result();
             $this->load->view('V_acara.php', $data);
         }
         else
@@ -119,7 +120,7 @@ class Acara extends CI_Controller {
 	public function tambah()
 	{
 		$config['upload_path']      = './assets/images/acara/';
-        $config['allowed_types']    = 'gif|jpg|png';
+        $config['allowed_types']    = 'gif|jpg|jpeg|png';
         $config['max_size']         = 1000000000;
         $config['max_width']        =10240;
         $config['max_height']       =7680;
@@ -214,7 +215,17 @@ class Acara extends CI_Controller {
 
     public function hapus($value)
     {
-        $idm=$this->session->userdata('idm');        
+        $idm=$this->session->userdata('idm');
+        $peserta=$this->M_peserta->pesertaacara($value)->result();
+        if($peserta)
+        {
+            foreach ($peserta as $key)
+            {
+                $idp=$key->idp;
+                $this->M_peserta->hapus($idp);
+            }
+        }
+
         $res=$this->M_acara->acaraidmember($value,$idm)->result();
         if ($res)
         {

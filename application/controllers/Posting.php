@@ -77,6 +77,12 @@ class Posting extends CI_Controller {
 		$this->load->view('posting/V_saran.php',$data);
 	}
 
+	public function vtentang()
+	{
+		$data['judul']="Tentang Kami";
+		$this->load->view('posting/V_about.php',$data);
+	}
+
 	public function saran()
 	{
 		$this->M_acara->saran();
@@ -171,6 +177,13 @@ class Posting extends CI_Controller {
            	$this->M_peserta->konfirmasi();
 			redirect('Posting/vkonfirmasi/2','refresh');
         }
+	}
+
+	public function print($idp)
+	{	
+		$data['idp']=$idp;
+		$data['peserta']=$this->M_peserta->cekidp($idp)->row_array();
+		$this->load->view('posting/V_print',$data);
 	}
 
 }

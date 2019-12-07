@@ -72,6 +72,7 @@ class M_peserta extends CI_Model {
 		'jk_peserta'		=> $this->input->post('jk'),
 		'umur_peserta'		=> $this->input->post('umur'),
 		'status_peserta'	=> $this->input->post('status'),
+		'instansi_peserta'	=> $this->input->post('instansi'),
 		'alamat_peserta'	=> $this->input->post('alamat'),
 		'email_peserta'		=> $this->input->post('email'),
 		'telp_peserta'		=> $this->input->post('telp')

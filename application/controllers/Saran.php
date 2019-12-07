@@ -8,6 +8,13 @@ class Saran extends CI_Controller {
 		$this->load->helper('date','url','form');
 		$this->load->library('form_validation');
 		$this->load->model('M_saran');
+
+		$idm=$this->session->userdata('idm');
+		$master=$this->session->userdata('master');
+		if ($idm==null&&$master!=1)
+		{
+			redirect('Login','refresh');
+		}
 	}
 
 	public function index()
@@ -22,6 +29,22 @@ class Saran extends CI_Controller {
 		{
 			$data['saran']=$this->M_saran->tampilsaran()->result();
         	$this->load->view('V_saran.php',$data);	
+		}
+	}
+
+	public function cari()
+	{
+		$opsi=$this->input->post('option');
+		//$idm=$this->session->userdata('idm');
+		$data['nonmas']=0;
+		if($opsi==10)
+		{
+			redirect('Saran','refresh');
+		}
+		else if($opsi!=10)
+		{
+			$data['saran']=$this->M_saran->tampilsaranstatus($opsi)->result();
+			$this->load->view('V_saran.php',$data);
 		}
 	}
 

@@ -18,6 +18,12 @@
                 $required="";
            }
         $urisegment=$this->uri->segment(3);
+
+        $error=$this->session->flashdata('error');
+        if ($error!=null) 
+        {
+            echo $error;
+        }
         ?>
 
 
@@ -166,6 +172,11 @@
                                     <div class="form-group">
                                         <label class=" form-control-label">Tema</label>
                                         <input type="text" name="tema" placeholder="Tema Acara" class="form-control" required <?php if($ket!="tambah"){?>value="<?php echo $acara['tema'];?>"<?php echo $label; } ?>>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class=" form-control-label">Tempat</label>
+                                        <input type="text" name="tempat" placeholder="Tempat Acara" class="form-control" required <?php if($ket!="tambah"){?>value="<?php echo $acara['tempat'];?>"<?php echo $label; } ?>>
                                     </div>
                                     
                                      <div class="row form-group">

@@ -15,6 +15,12 @@ class M_saran extends CI_Model {
 		return $query;
 	}
 
+	public function tampilsaranstatus($baca)
+	{
+		$query=$this->db->query("SELECT * FROM `saran` WHERE baca=".$baca."");
+		return $query;
+	}
+
 	public function saran()
 	{
 		$data = array(

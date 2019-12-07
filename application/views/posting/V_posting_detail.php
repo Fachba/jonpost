@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Yummy Blog - Food Blog Template</title>
+    <title>JonPost | Detail</title>
 
     <?php include 'postheader.php'; ?>
 
@@ -71,7 +71,10 @@
                                         <div class="post-author-date-area d-flex">
                                             <!-- Post Author -->
                                             <div class="post-author">
-                                                <a href="#"><?php echo $posting['nama'] ?></a>
+                                                <a href="#"><?php echo $posting['organisasi'] ?></a>
+                                            </div>
+                                            <div class="post-author">
+                                                <a href="#"><?php echo $posting['tempat'] ?></a>
                                             </div>
                                             <!-- Post Date -->
                                             <div class="post-date">
@@ -155,6 +158,9 @@
                                         <option value="bekerja">Bekerja</option>
                                         <option value="dll">Dll</option>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="instansi" placeholder="Instansi" class="form-control" required>
                                 </div>
                                  <div class="form-group">
                                     <input type="text" name="telp" placeholder="Nomor Telp / HP" class="form-control" <?php if($this->session->userdata('telp')!=null){?>value="<?php echo $this->session->userdata('telp');}?>" required>

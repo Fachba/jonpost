@@ -23,6 +23,12 @@ class M_acara extends CI_Model {
         }      
     }
 
+    public function tampilsemuaacara()
+	{
+		$query=$this->db->query("SELECT ida,organisasi,tema,tanggal,jam,htm,cotelp,post FROM `acara` GROUP BY ida");
+		return $query;
+	}
+
 	public function tampilacara($id)
 	{
 		$query=$this->db->query("SELECT * FROM `acara` JOIN member USING(idm) WHERE idm=".$id."");
@@ -43,7 +49,7 @@ class M_acara extends CI_Model {
 
 	public function tampilacarainfo($id)
 	{
-		$query=$this->db->query("SELECT ida,organisasi,tema,tanggal,jam,htm,COUNT(idp) as tpeserta,SUM(htm) as thtm,cotelp,post FROM `acara` JOIN acara_member USING(ida) JOIN peserta USING(idp) WHERE acara.idm=".$id." GROUP BY ida");
+		$query=$this->db->query("SELECT * FROM `acara` WHERE acara.idm=".$id." ");
 		return $query;
 	}
 
@@ -62,7 +68,7 @@ class M_acara extends CI_Model {
 	public function acaraidmember($id,$idm)
 	{
 		$this->db->where('ida', $id);
-		$this->db->where('idm', $idm);
+		//$this->db->where('idm', $idm);
 		return $this->db->get('acara');
 	}
 
@@ -142,6 +148,7 @@ class M_acara extends CI_Model {
 		'idm'			=> $this->session->userdata('idm'),
 		'organisasi'	=> $this->input->post('organisasi'),
 		'tema'			=> $this->input->post('tema'),
+		'tempat'		=> $this->input->post('tempat'),
 		'tanggal'		=> $this->input->post('tanggal'),
 		'jam'			=> $this->input->post('jam'),
 		'htm'			=> $this->input->post('htm'),
@@ -158,6 +165,7 @@ class M_acara extends CI_Model {
 		$data = array(
 		'organisasi'	=> $this->input->post('organisasi'),
 		'tema'			=> $this->input->post('tema'),
+		'tempat'		=> $this->input->post('tempat'),
 		'tanggal'		=> $this->input->post('tanggal'),
 		'jam'			=> $this->input->post('jam'),
 		'htm'			=> $this->input->post('htm'),
@@ -175,6 +183,7 @@ class M_acara extends CI_Model {
 		$data = array(
 		'organisasi'	=> $this->input->post('organisasi'),
 		'tema'			=> $this->input->post('tema'),
+		'tempat'		=> $this->input->post('tempat'),
 		'tanggal'		=> $this->input->post('tanggal'),
 		'jam'			=> $this->input->post('jam'),
 		'htm'			=> $this->input->post('htm'),
@@ -202,8 +211,9 @@ class M_acara extends CI_Model {
 		$this->db->delete('acara_member');
 		
 		$this->db->where('ida', $id);
-		$this->db->where('idm', $idm);
+		//$this->db->where('idm', $idm);
 		$this->db->delete('acara');
+
 	}
 
 }

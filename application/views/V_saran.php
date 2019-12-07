@@ -33,7 +33,12 @@
                 </div>
             </section> -->
             <!-- END BREADCRUMB-->
-
+            <?php if ($saran==null)
+            {?>
+            <br><br><br>
+            <h3 style="text-align: center;" class="title-5 m-b-35">Daftar Saran Kosong</h3>
+            <br><br><br><br><br><br><br><br><br><br><br>
+            <?php } else { ?>
             <!-- DATA TABLE-->
             <section class="p-t-20">
                 <div class="container">
@@ -42,12 +47,12 @@
                             <h3 class="title-5 m-b-35">Daftar Saran</h3>
                             <div class="table-data__tool">
                                 <div class="table-data__tool-left">
-                                    <?php echo form_open_multipart('Peserta/cari'); ?>
+                                    <?php echo form_open_multipart('Saran/cari'); ?>
                                     <div class="rs-select2--light rs-select2--md">
                                         <select class="js-select2" name="option">
-                                            <option value="0" selected="selected">All Properties</option>
+                                            <option value="10" selected="selected">All Properties</option>
                                             <option value="1">Sudah Ditanggapi</option>
-                                            <option value="2">Belum Ditanggapi</option>
+                                            <option value="0">Belum Ditanggapi</option>
                                         </select>
                                         <div class="dropDownSelect2"></div>
                                     </div>
@@ -75,7 +80,7 @@
                                 </div> -->
                             </div>
                             <div class="table-responsive table-responsive-data2 ">
-                                <table class="table table-data2" id="datasaran">
+                                <table class="table table-data2">
                                     <thead>
                                         <tr>
                                             <th>Nomor</th>
@@ -131,7 +136,7 @@
                 </div>
             </section>
             <!-- END DATA TABLE-->
-
+            <?php } ?>
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
                 <div class="container">

@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Yummy Blog - Food Blog Template</title>
+    <title>JonPost | Konfirmasi</title>
 
     <?php include 'postheader.php'; ?>
 
@@ -78,8 +78,14 @@
                     </div>
                     <div class="col-12 col-md-7 item">
                         <div class="contact-form wow fadeInUpBig" data-wow-delay="0.1s">
-                            <h2 class="contact-form-title mb-30">Selamat Anda telah Terdaftar, <?php if($peserta['bill']!=2)
+                            <h2 class="contact-form-title mb-30">Selamat Anda telah Terdaftar, 
+                            <?php if($peserta['bill']!=2)
                                 { ?> Silahkan Konfirmasi <?php } ?></h2>
+                            <div class="form-group">
+                            <a href="<?php echo site_url('Posting/print/'.$idp.'') ?>" target="_blank">
+                                <button type="button" class="btn btn-success col-md-12">Cetak Kartu</button>
+                            </a>
+                            </div>
                             <?php
                             if($peserta['bill']==0)
                             {
@@ -107,6 +113,7 @@
                                 <button type="button" class="btn btn-success col-md-12">Pembayaran Lunas</button>
                                 </div>
                             <?php } ?>
+                            
                             <!-- Contact Form -->
                             
                             <!-- <form action="#" method="post"> -->

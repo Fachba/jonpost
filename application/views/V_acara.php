@@ -34,7 +34,7 @@
                 </div>
             </section> -->
             <!-- END BREADCRUMB-->
-
+            
             <!-- DATA TABLE-->
             <section class="p-t-20">
                 <div class="container">
@@ -73,18 +73,25 @@
                                 </div>
                             </div>
                             <?php } ?>
+                            <?php if ($acara==null)
+                            {?>
+                            <br><br><br>
+                            <h3 style="text-align: center;" class="title-5 m-b-35">Daftar Postingan Kosong</h3>
+                            <br><br><br><br><br><br><br><br><br><br><br>
+                            <?php } else { ?>
                             <div class="table-responsive table-responsive-data2">
                                 <table class="table table-data2" id="dataacara">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Kode</th>
-                                            <th>Organisasi</th>
-                                            <th>Tema</th>
+                                            <!-- <th>Organisasi</th>
+                                            <th>Tema</th> -->
                                             <th>Tanggal_Acara</th>
-                                            <th>Peserta</th>
+                                            <!-- <th>Peserta</th> -->
                                             <th>HTM</th>
-                                            <th>Total_HTM</th>
+                                            <!-- <th>Total_HTM</th> -->
+                                            <th>Link Pendaftaran</th>
                                             <th>No_Koordinator</th>
                                             <th>Posting</th>
                                             <th>Aksi</th>
@@ -96,16 +103,17 @@
                                         <tr class="tr-shadow spacer">
                                             <td><?php echo $no ?></td>
                                             <td><?php echo $key->ida ?></td>
-                                            <td>
+                                            <!-- <td>
                                                 <span class="block-email"><?php echo $key->organisasi ?></span>
                                             </td>
-                                            <td class="desc"><?php echo $key->tema ?></td>
+                                            <td class="desc"><?php echo $key->tema ?></td> -->
                                             <td><?php echo $key->tanggal ?></td>
-                                            <td>
+                                            <!-- <td>
                                                 <?php echo $key->tpeserta ?>
-                                            </td>
-                                             <td><?php echo $key->htm ?></td>
-                                            <td><?php echo $key->thtm ?></td>
+                                            </td> -->
+                                            <td><?php echo $key->htm ?></td>
+                                            <!-- <td><?php echo $key->thtm ?></td> -->
+                                            <td><a href="<?php echo site_url('Posting/detail/'.$key->ida.'') ?>" target="_blank"><?php echo site_url('Posting/detail/'.$key->ida.'') ?></a></td>
                                             <td><?php echo $key->cotelp ?></td>
                                              <td>
                                                 <?php
@@ -155,12 +163,13 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
             </section>
             <!-- END DATA TABLE-->
-
+            
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
                 <div class="container">

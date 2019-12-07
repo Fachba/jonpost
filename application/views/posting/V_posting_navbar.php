@@ -59,7 +59,7 @@
                                 <a class="nav-link" href="<?php echo site_url('Posting/vkonfirmasi/0') ?>">Konfirmasi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('Posting/kosong') ?>">Tentang Kami</a>
+                                <a class="nav-link" href="<?php echo site_url('Posting/vtentang') ?>">Tentang Kami</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url('Saran/vsaran') ?>">Saran</a>

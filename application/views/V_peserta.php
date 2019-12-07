@@ -33,7 +33,12 @@
                 </div>
             </section> -->
             <!-- END BREADCRUMB-->
-
+            <?php if ($peserta==null)
+            {?>
+            <br><br><br>
+            <h3 style="text-align: center;" class="title-5 m-b-35">Daftar Peserta Kosong</h3>
+            <br><br><br><br><br><br><br><br><br><br><br>
+            <?php } else { ?>
             <!-- DATA TABLE-->
             <section class="p-t-20">
                 <div class="container">
@@ -179,7 +184,7 @@
                 </div>
             </section>
             <!-- END DATA TABLE-->
-
+            <?php } ?>
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
                 <div class="container">

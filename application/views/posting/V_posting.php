@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Yummy Blog - Food Blog Template</title>
+    <title>JonPost | Postingan</title>
 
    <?php include 'postheader.php'; ?>
 
@@ -38,7 +38,12 @@
         </div>
     </div>
     <!-- ****** Breadcumb Area End ****** -->
-
+    <?php if ($post==null)
+    {?>
+        <br><br><br>
+        <h3 style="text-align: center;">Daftar Posting Kosong</h3>
+        <br><br><br>
+    <?php } else { ?>
     <!-- ****** Archive Area Start ****** -->
     <section class="archive-area section_padding_80">
         <div class="container">
@@ -121,7 +126,7 @@
         </div>
     </section>
     <!-- ****** Archive Area End ****** -->
-
+    <?php } ?>
     <!-- ****** Our Creative Portfolio Area End ****** -->
 
     <!-- ****** Footer Social Icon Area Start ****** -->
