@@ -222,8 +222,11 @@ class Acara extends CI_Controller {
             foreach ($peserta as $key)
             {
                 $idp=$key->idp;
-                $this->M_peserta->hapus($idp);
-            }
+                $nota=$key->nota;
+                //$this->M_peserta->hapus($idp);
+                unlink("./assets/images/nota/".$nota);
+                $this->M_peserta->hapus($idp);  
+            }      
         }
 
         $res=$this->M_acara->acaraidmember($value,$idm)->result();

@@ -71,35 +71,32 @@
                                         <div class="post-author-date-area d-flex">
                                             <!-- Post Author -->
                                             <div class="post-author">
-                                                <a href="#"><?php echo $posting['organisasi'] ?></a>
+                                                <a href="#">Organisasi <?php echo $posting['organisasi'] ?></a>
                                             </div>
-                                            <div class="post-author">
-                                                <a href="#"><?php echo $posting['tempat'] ?></a>
-                                            </div>
+                                            
+                                        </div>
+                                        <!-- Post Comment & Share Area -->
+                                        <div class="post-comment-share-area d-flex">
                                             <!-- Post Date -->
                                             <div class="post-date">
                                                 <a href="#"><?php echo $posting['tanggal'] ?></a>
                                             </div>
-                                        </div>
-                                        <!-- Post Comment & Share Area -->
-                                        <div class="post-comment-share-area d-flex">
-                                            <!-- Post Favourite -->
-                                            <div class="post-favourite">
-                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
-                                            </div>
-                                            <!-- Post Comments -->
-                                            <div class="post-comments">
-                                                <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
-                                            </div>
-                                            <!-- Post Share -->
-                                            <div class="post-share">
-                                                <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                            <!-- Post Date -->
+                                            <div class="post-date">
+                                                <a href="#"> &nbsp <?php echo $posting['jam'] ?></a>
                                             </div>
                                         </div>
                                     </div>
                                     <a href="#">
                                         <h2 class="post-headline"><?php echo $posting['tema'] ?></h2>
                                     </a>
+                                    <h6>Tempat &nbsp : <?php echo $posting['tempat'] ?>
+                                        <br>
+                                        Tanggal &nbsp: <?php echo $posting['tanggal'] ?>
+                                        <br>
+                                        Jam &nbsp &nbsp &nbsp &nbsp: <?php echo $posting['jam'] ?>
+                                        <br>
+                                    </h6>
                                     <blockquote class="yummy-blockquote mt-30 mb-30">
                                         <h5 class="mb-30"><?php echo $posting['des'] ?></h5>
                                         <h6 class="text-muted"><?php echo $posting['nama'] ?></h6>

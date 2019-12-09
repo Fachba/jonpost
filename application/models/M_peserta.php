@@ -115,6 +115,12 @@ class M_peserta extends CI_Model {
 		$this->db->update('peserta', $data);
 	}
 
+	public function pesertaid($id)
+	{
+		$this->db->where('idp', $id);
+		return $this->db->get('peserta');
+	}
+
 	public function hadir($idp,$hadir)
 	{
 		$data = array(

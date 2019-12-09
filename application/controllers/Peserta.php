@@ -142,7 +142,15 @@ class Peserta extends CI_Controller {
 
 	public function hapus($value)
     {
-        $this->M_peserta->hapus($value);        
-        redirect('Peserta/index','refresh');     
+        $res=$this->M_peserta->pesertaid($value)->result();
+        if ($res)
+        {
+            $row = $res[0]; 
+            $gambar=$row->nota;
+
+            unlink("./assets/images/nota/".$gambar);
+            $this->M_peserta->hapus($value);        
+            redirect('Peserta/index','refresh');
+        }        
     }
 }

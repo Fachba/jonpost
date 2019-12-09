@@ -10,8 +10,11 @@ class M_acara extends CI_Model {
 	}
 
 	public function getAll($config){  
+        $tanggal=date('Y-m-d');
         $this->db->select('*');
 	 	$this->db->where('post', 1);
+	 	$this->db->where('tanggal >=',$tanggal);
+	 	$this->db->order_by('tanggal', "ASC");
         $hasilquery=$this->db->get('acara', $config['per_page'], $this->uri->segment(3));
         if ($hasilquery->num_rows() > 0)
          {

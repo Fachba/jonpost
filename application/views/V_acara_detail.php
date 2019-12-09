@@ -183,13 +183,13 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label class=" form-control-label">Tanggal</label>
-                                                <input type="date" name="tanggal" placeholder="Tanggal Acara" class="form-control" required <?php if($ket!="tambah"){?>value="<?php echo $acara['tanggal'];?>"<?php echo $label; } ?>>
+                                                <input type="date" name="tanggal" placeholder="Tanggal Acara" class="form-control" required <?php if($ket!="tambah"){?>value="<?php echo $acara['tanggal'];?>"<?php echo $label; } ?> min="<?php echo date('Y-m-d'); ?>">
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label class=" form-control-label">Jam</label>
-                                                <input type="number" placeholder="Jam" name="jam" class="form-control" <?php if($ket!="tambah"){?>value="<?php echo $acara['jam'];?>"<?php echo $label; } ?>>
+                                                <input type="time" placeholder="Jam" name="jam" class="form-control" <?php if($ket!="tambah"){?>value="<?php echo $acara['jam'];?>"<?php echo $label; } ?>>
                                             </div>
                                         </div>
                                     </div>

@@ -68,24 +68,13 @@
                                     <div class="post-author">
                                         <a href="#"><?php echo $key->organisasi ?></a>
                                     </div>
-                                    <!-- Post Date -->
-                                    <div class="post-date">
-                                        <a href="#"><?php echo $key->tanggal ?></a>
-                                    </div>
+                                   
                                 </div>
                                 <!-- Post Comment & Share Area -->
                                 <div class="post-comment-share-area d-flex">
-                                    <!-- Post Favourite -->
-                                    <div class="post-favourite">
-                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
-                                    </div>
-                                    <!-- Post Comments -->
-                                    <div class="post-comments">
-                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
-                                    </div>
-                                    <!-- Post Share -->
-                                    <div class="post-share">
-                                        <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                     <!-- Post Date -->
+                                    <div class="post-date">
+                                        <a href="#"><?php echo $key->tanggal ?></a>
                                     </div>
                                 </div>
                             </div>
