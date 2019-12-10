@@ -61,7 +61,7 @@
                                 <div class="row form-group">
                                     <div class="col-6 col-md-6">
                                          <div class="form-group">
-                                           <input type="text" class="form-control" id="contact-name" value="Status Pembayaran" disabled>
+                                           <input type="text" class="form-control" id="contact-name" value="Pembayaran" disabled>
                                         </div>
                                     </div>
                                     <div class="col-6 col-md-6">
@@ -71,7 +71,7 @@
                                             {
                                                 ?>
                                                 <div class="form-group">
-                                                <button style="color: red" type="button" class="btn btn-danger col-md-12 form-control">Belum Ada Bukti</button>
+                                                <button style="color: red" type="button" class="btn btn-danger col-md-12 form-control">Belum</button>
                                                 </div>
                                                 <?php
                                             }
@@ -79,7 +79,7 @@
                                             {
                                                 ?>
                                                <div class="form-group">
-                                                <button style="color: yellow" type="button" class="btn btn-danger col-md-12 form-control">Sedang Diverifikasi</button>
+                                                <button style="color: yellow" type="button" class="btn btn-warning col-md-12 form-control">Diverifikasi</button>
                                                 </div>
                                                 </div><?php
                                             }
@@ -87,7 +87,7 @@
                                             {
                                                 ?>
                                                <div class="form-group">
-                                                <button style="color: green" type="button" class="btn btn-danger col-md-12 form-control">Pembayaran Lunas</button>
+                                                <button style="color: green" type="button" class="btn btn-success col-md-12 form-control">Lunas</button>
                                                 </div>
                                             <?php } ?>
                                         </div>
