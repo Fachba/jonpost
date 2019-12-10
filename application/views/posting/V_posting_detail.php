@@ -78,12 +78,9 @@
                                         <div class="post-comment-share-area d-flex">
                                             <!-- Post Date -->
                                             <div class="post-date">
-                                                <a href="#">Tanggal Kegiatan<?php echo $posting['tanggal'] ?></a>
+                                                <a href="#">Dibuat Pada &nbsp : <?php echo $posting['dibuat'] ?></a>
                                             </div>
-                                            <!-- Post Date -->
-                                            <div class="post-date">
-                                                <a href="#"> &nbsp Pukul <?php echo $posting['jam'] ?></a>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <a href="#">

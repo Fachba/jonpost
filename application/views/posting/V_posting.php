@@ -65,8 +65,8 @@
                             <div class="post-meta d-flex">
                                 <div class="post-author-date-area d-flex">
                                     <!-- Post Author -->
-                                    <div class="post-author">
-                                        <a href="#"><?php echo $key->organisasi ?></a>
+                                    <div class="">
+                                        <a href="#">Dari <?php echo $key->organisasi ?></a>
                                     </div>
                                    
                                 </div>
@@ -74,7 +74,7 @@
                                 <div class="post-comment-share-area d-flex">
                                      <!-- Post Date -->
                                     <div class="post-date">
-                                        <a href="#"><?php echo $key->tanggal ?></a>
+                                        <a href="#">Tanggal : <?php echo $key->tanggal ?></a>
                                     </div>
                                 </div>
                             </div>
