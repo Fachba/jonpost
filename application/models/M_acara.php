@@ -147,6 +147,11 @@ class M_acara extends CI_Model {
 
 	public function tambah()
 	{
+		$htm=$this->input->post('htm');
+		if ($htm<1||$htm==" "||$htm==null)
+		{
+			$htm=0;
+		}
 		$data = array(
 		'idm'			=> $this->session->userdata('idm'),
 		'organisasi'	=> $this->input->post('organisasi'),
@@ -157,6 +162,7 @@ class M_acara extends CI_Model {
 		'htm'			=> $this->input->post('htm'),
 		'des'			=> $this->input->post('des'),
 		'cotelp'		=> $this->input->post('telp'),
+		'post'			=> 0,
 		'gambar'		=>$this->upload->data('file_name')
 		);
 
@@ -165,6 +171,11 @@ class M_acara extends CI_Model {
 
 	public function edit($id)
 	{
+		$htm=$this->input->post('htm');
+		if ($htm<1||$htm==" "||$htm==null)
+		{
+			$htm=0;
+		}
 		$data = array(
 		'organisasi'	=> $this->input->post('organisasi'),
 		'tema'			=> $this->input->post('tema'),
@@ -174,6 +185,7 @@ class M_acara extends CI_Model {
 		'htm'			=> $this->input->post('htm'),
 		'des'			=> $this->input->post('des'),
 		'cotelp'		=> $this->input->post('telp'),
+		'post'			=> 0,
 		'gambar'		=>$this->upload->data('file_name')
 		);
 
@@ -183,6 +195,11 @@ class M_acara extends CI_Model {
 
 	public function edit_nf($id)
 	{
+		$htm=$this->input->post('htm');
+		if ($htm<1||$htm==" "||$htm==null)
+		{
+			$htm=0;
+		}
 		$data = array(
 		'organisasi'	=> $this->input->post('organisasi'),
 		'tema'			=> $this->input->post('tema'),
@@ -191,6 +208,7 @@ class M_acara extends CI_Model {
 		'jam'			=> $this->input->post('jam'),
 		'htm'			=> $this->input->post('htm'),
 		'des'			=> $this->input->post('des'),
+		'post'			=> 0,
 		'cotelp'		=> $this->input->post('telp')
 		);
 

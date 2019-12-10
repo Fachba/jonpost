@@ -32,6 +32,7 @@ class M_member extends CI_Model {
 		'email'		=> $this->input->post('email'),
 		'telp'		=> $this->input->post('telp'),
 		'aktif'		=> 1,
+		'master'	=> 0,
 		'username'	=> $this->input->post('username'),
 		'password'	=> $this->input->post('password')
 		);

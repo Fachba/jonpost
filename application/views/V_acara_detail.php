@@ -15,7 +15,7 @@
            else
            {
                 $label="";
-                $required="";
+                $required="required";
            }
         $urisegment=$this->uri->segment(3);
 
@@ -189,7 +189,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label class=" form-control-label">Jam</label>
-                                                <input type="time" placeholder="Jam" name="jam" class="form-control" <?php if($ket!="tambah"){?>value="<?php echo $acara['jam'];?>"<?php echo $label; } ?>>
+                                                <input type="time" placeholder="Jam" name="jam" required class="form-control" <?php if($ket!="tambah"){?>value="<?php echo $acara['jam'];?>"<?php echo $label; } ?>>
                                             </div>
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="street" class=" form-control-label">Keterangan / Deskripsi</label>
-                                       <textarea name="des" rows="5" placeholder="Keterangan..." class="form-control" <?php if($ket!="tambah"){ echo $label; } ?> required><?php if($ket!="tambah"){ echo $acara['des'];?><?php } ?></textarea>
+                                       <textarea required name="des" rows="5" placeholder="Keterangan..." class="form-control" <?php if($ket!="tambah"){ echo $label; } ?> required><?php if($ket!="tambah"){ echo $acara['des'];?><?php } ?></textarea>
                                     </div>
 
                                     <div class="card-footer">

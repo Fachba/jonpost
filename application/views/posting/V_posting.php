@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="<?php echo site_url('Posting/detail/'.$key->ida.'') ?>">
                                 <h4 class="post-headline">
                                     <?php echo $key->tema ?>
                                 </h4>

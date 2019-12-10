@@ -10,19 +10,19 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard 3</title>
+    <title>Sign Up Jonpost</title>
 
     <?php include 'header.php'; ?>
     <?php 
        if ($ket=="detail")
        {
             $label="disabled";
-            $required="required";
+           
        }
        else
        {
             $label="";
-            $required="";
+           
        }
     $urisegment=$this->uri->segment(3);
     ?>

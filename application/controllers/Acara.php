@@ -222,9 +222,11 @@ class Acara extends CI_Controller {
             foreach ($peserta as $key)
             {
                 $idp=$key->idp;
-                $nota=$key->nota;
-                //$this->M_peserta->hapus($idp);
-                unlink("./assets/images/nota/".$nota);
+                $gambar=$key->nota;
+                if ($gambar!=" "||$gambar!=null)
+                {
+                    unlink("./assets/images/nota/".$gambar);    
+                }
                 $this->M_peserta->hapus($idp);  
             }      
         }
@@ -234,8 +236,10 @@ class Acara extends CI_Controller {
         {
             $row = $res[0]; 
             $gambar=$row->gambar;
-
-            unlink("./assets/images/acara/".$gambar);
+            if ($gambar!=" "||$gambar!=null)
+            {
+                unlink("./assets/images/acara/".$gambar);   
+            }
             $this->M_acara->hapus($value,$idm);        
             redirect('Acara/index','refresh');
         }

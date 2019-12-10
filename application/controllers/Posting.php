@@ -10,11 +10,7 @@ class Posting extends CI_Controller {
 		$this->load->model('M_acara');
 		$this->load->model('M_peserta');
 		$this->load->library('pagination');
-		// $idm=$this->session->userdata('idm');
-		// if ($idm==null)
-		// {
-		// 	redirect('Login','refresh');
-		// }
+		
 	}
 
 	public function kosong()

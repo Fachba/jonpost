@@ -147,8 +147,10 @@ class Peserta extends CI_Controller {
         {
             $row = $res[0]; 
             $gambar=$row->nota;
-
-            unlink("./assets/images/nota/".$gambar);
+            if ($gambar!=" "||$gambar!=null)
+            {
+            	unlink("./assets/images/nota/".$gambar);	
+            }
             $this->M_peserta->hapus($value);        
             redirect('Peserta/index','refresh');
         }        

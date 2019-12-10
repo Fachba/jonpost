@@ -25,7 +25,9 @@ class M_saran extends CI_Model {
 	{
 		$data = array(
 		'nama_saran'	=> $this->input->post('nama_saran'),
-		'saran'			=> $this->input->post('saran')
+		'saran'			=> $this->input->post('saran'),
+		'baca'			=> 0,
+		'tanggapan'		=> " "
 		);
 
 		$this->db->insert('saran', $data);

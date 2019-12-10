@@ -71,35 +71,52 @@
                                         <div class="post-author-date-area d-flex">
                                             <!-- Post Author -->
                                             <div class="post-author">
-                                                <a href="#">Organisasi <?php echo $posting['organisasi'] ?></a>
+                                                <a href="#">Dibuat Oleh <?php echo $posting['nama'] ?> Dari <?php echo $posting['organisasi'] ?></a>
                                             </div>
-                                            
                                         </div>
                                         <!-- Post Comment & Share Area -->
                                         <div class="post-comment-share-area d-flex">
                                             <!-- Post Date -->
                                             <div class="post-date">
-                                                <a href="#"><?php echo $posting['tanggal'] ?></a>
+                                                <a href="#">Tanggal Kegiatan<?php echo $posting['tanggal'] ?></a>
                                             </div>
                                             <!-- Post Date -->
                                             <div class="post-date">
-                                                <a href="#"> &nbsp <?php echo $posting['jam'] ?></a>
+                                                <a href="#"> &nbsp Pukul <?php echo $posting['jam'] ?></a>
                                             </div>
                                         </div>
                                     </div>
                                     <a href="#">
                                         <h2 class="post-headline"><?php echo $posting['tema'] ?></h2>
                                     </a>
-                                    <h6>Tempat &nbsp : <?php echo $posting['tempat'] ?>
-                                        <br>
-                                        Tanggal &nbsp: <?php echo $posting['tanggal'] ?>
-                                        <br>
-                                        Jam &nbsp &nbsp &nbsp &nbsp: <?php echo $posting['jam'] ?>
-                                        <br>
-                                    </h6>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h6>Tempat</h6>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h6> : <?php echo $posting['tempat'] ?></h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h6>Tanggal</h6>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h6> : <?php echo $posting['tanggal'] ?></h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h6>Jam</h6>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h6> : <?php echo $posting['jam'] ?></h6>
+                                        </div>
+                                    </div>
+                                    
                                     <blockquote class="yummy-blockquote mt-30 mb-30">
                                         <h5 class="mb-30"><?php echo $posting['des'] ?></h5>
-                                        <h6 class="text-muted"><?php echo $posting['nama'] ?></h6>
+                                        <h6 class="text-muted">TELP Koordinator : <?php echo $posting['cotelp'] ?></h6>
                                     </blockquote>
                                 </div>
                             </div>
@@ -129,7 +146,7 @@
                             <?php $urisegment=$this->uri->segment(3); ?>
                             <?php echo form_open_multipart('Posting/daftar/'.$urisegment.''); ?>
                                 <div class="form-group">
-                                    <input type="text" name="nama" class="form-control" id="contact-name" placeholder="Name" <?php if($this->session->userdata('nama')!=null){?>value="<?php echo $this->session->userdata('nama');}?>">
+                                    <input type="text" name="nama" class="form-control" id="contact-name" placeholder="Name" <?php if($this->session->userdata('nama')!=null){?>value="<?php echo $this->session->userdata('nama');}?>" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="number" name="umur" class="form-control" id="contact-name" placeholder="Umur Anda" <?php if($this->session->userdata('nama')!=null){?>value="<?php echo $this->session->userdata('umur');}?>">
@@ -157,7 +174,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="instansi" placeholder="Instansi" class="form-control" required>
+                                    <input type="text" name="instansi" placeholder="Instansi" class="form-control">
                                 </div>
                                  <div class="form-group">
                                     <input type="text" name="telp" placeholder="Nomor Telp / HP" class="form-control" <?php if($this->session->userdata('telp')!=null){?>value="<?php echo $this->session->userdata('telp');}?>" required>
@@ -166,7 +183,7 @@
                                     <input type="email" name="email" class="form-control" id="contact-email" placeholder="Email" <?php if($this->session->userdata('nama')!=null){?>value="<?php echo $this->session->userdata('email');}?>">
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" name="alamat" id="message" cols="30" rows="10"  placeholder="Alamat Anda"><?php if($this->session->userdata('nama')!=null){?><?php echo $this->session->userdata('alamat');}?></textarea>
+                                    <textarea class="form-control" name="alamat" id="message" cols="30" rows="10"  placeholder="Alamat Anda" required><?php if($this->session->userdata('nama')!=null){?><?php echo $this->session->userdata('alamat');}?></textarea>
                                 </div>
                                 <div class="form-group">
                                 <h5>* Pastikan Anda Mengisi dengan Baik dan Benar, Terima Kasih</h5>

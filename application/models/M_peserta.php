@@ -66,16 +66,26 @@ class M_peserta extends CI_Model {
 
 	public function tambah($idp)
 	{
+		$umur=$this->input->post('umur');
+		if ($umur==" "||$umur=null||$umur<1)
+		{
+			$umur=0;
+		}
+		
 		$data = array(
 		'idp'				=> $idp,			
 		'nama_peserta'		=> $this->input->post('nama'),
 		'jk_peserta'		=> $this->input->post('jk'),
-		'umur_peserta'		=> $this->input->post('umur'),
+		'umur_peserta'		=> $umur,
 		'status_peserta'	=> $this->input->post('status'),
 		'instansi_peserta'	=> $this->input->post('instansi'),
 		'alamat_peserta'	=> $this->input->post('alamat'),
 		'email_peserta'		=> $this->input->post('email'),
-		'telp_peserta'		=> $this->input->post('telp')
+		'telp_peserta'		=> $this->input->post('telp'),
+		'bill'				=> 0,
+		'hadir'				=> 0,
+		'nota'				=> " ",
+		'ket_peserta'		=> " "
 		);
 
 		$this->db->insert('peserta', $data);
@@ -86,7 +96,8 @@ class M_peserta extends CI_Model {
 		$data = array(
 		'ida'	=> $ida,
 		'idm'	=> $idm,
-		'idp'	=> $idp
+		'idp'	=> $idp,
+		'ket'	=> " "
 		);
 
 		$this->db->insert('acara_member', $data);
