@@ -86,7 +86,7 @@ class Acara extends CI_Controller {
         $data['ket']="detail";
         $data['idm']=$this->session->userdata('idm');
         $idm=$this->session->userdata('idm');
-        $data['acara']=$this->M_acara->acaraidmember($value,$idm)->row_array();
+        $data['acara']=$this->M_acara->acaraidmember($value)->row_array();
 
         $data['tpeserta']=$this->M_acara->totalpesertaacara($value)->row_array();
 		$data['tpesertahadir']=$this->M_acara->totalpesertaacarahadir($value)->row_array();
@@ -109,7 +109,7 @@ class Acara extends CI_Controller {
         $data['ket']="edit";
         $data['idm']=$this->session->userdata('idm');
         $idm=$this->session->userdata('idm');
-        $data['acara']=$this->M_acara->acaraidmember($value,$idm)->row_array();
+        $data['acara']=$this->M_acara->acaraidmember($value)->row_array();
         if ($data['acara']==null)
 		{
 			redirect('Posting/kosong','refresh');
@@ -183,7 +183,7 @@ class Acara extends CI_Controller {
             else
             {
                 $idm=$this->session->userdata('idm');
-                $res=$this->M_acara->acaraidmember($kode,$idm)->result();
+                $res=$this->M_acara->acaraidmember($kode)->result();
                 if ($res)
                 {
                     $row = $res[0]; 
@@ -207,6 +207,17 @@ class Acara extends CI_Controller {
                 $this->image_lib->initialize($configer);
                 $this->image_lib->resize();
                 
+                $res=$this->M_acara->acaraidmember($kode)->result();
+                if ($res)
+                {
+                    $row = $res[0]; 
+                    $gambar=$row->gambar;
+                    if ($gambar!=""&&$gambar!=" ")
+                    {
+                        unlink("./assets/images/acara/".$gambar);   
+                    }
+                }
+
                 $this->M_acara->edit($kode);
                 redirect('Acara/index','refresh');
             }
@@ -223,20 +234,20 @@ class Acara extends CI_Controller {
             {
                 $idp=$key->idp;
                 $gambar=$key->nota;
-                if ($gambar!=" "||$gambar!=null)
+                if ($gambar!=""&&$gambar!=" ")
                 {
-                    unlink("./assets/images/nota/".$gambar);    
+                    unlink("./assets/images/nota/".$gambar);
                 }
                 $this->M_peserta->hapus($idp);  
             }      
         }
 
-        $res=$this->M_acara->acaraidmember($value,$idm)->result();
+        $res=$this->M_acara->acaraidmember($value)->result();
         if ($res)
         {
             $row = $res[0]; 
             $gambar=$row->gambar;
-            if ($gambar!=" "||$gambar!=null)
+            if ($gambar!=""&&$gambar!=" ")
             {
                 unlink("./assets/images/acara/".$gambar);   
             }

@@ -130,6 +130,22 @@ class Peserta extends CI_Controller {
 
 	public function editstatus($idp,$bill)
 	{
+		$res=$this->M_peserta->pesertaid($idp)->result();
+        if ($res)
+        {
+            $row = $res[0]; 
+            $gambar=$row->nota;
+            $status=$row->bill;
+
+            if ($status!=0&&$bill==0)
+            {
+            	if ($gambar!=""&&$gambar!=" ")
+	            {
+	            	unlink("./assets/images/nota/".$gambar);
+	            }
+            }
+        }
+
 		$this->M_peserta->verifikasi($idp,$bill);
 		redirect('Peserta','refresh');
 	}
@@ -147,10 +163,12 @@ class Peserta extends CI_Controller {
         {
             $row = $res[0]; 
             $gambar=$row->nota;
-            if ($gambar!=" "||$gambar!=null)
+            
+            if ($gambar!=""&&$gambar!=" ")
             {
-            	unlink("./assets/images/nota/".$gambar);	
+            	unlink("./assets/images/nota/".$gambar);
             }
+
             $this->M_peserta->hapus($value);        
             redirect('Peserta/index','refresh');
         }        

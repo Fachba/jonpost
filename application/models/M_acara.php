@@ -68,10 +68,10 @@ class M_acara extends CI_Model {
 		return $query;
 	}
 
-	public function acaraidmember($id,$idm)
+	public function acaraidmember($id)
 	{
 		$this->db->where('ida', $id);
-		//$this->db->where('idm', $idm);
+		
 		return $this->db->get('acara');
 	}
 
