@@ -15,7 +15,7 @@
            else
            {
                 $label="";
-                $required="required";
+                $required="";
            }
         $urisegment=$this->uri->segment(3);
 

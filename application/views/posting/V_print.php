@@ -28,6 +28,7 @@
                             <!-- Contact Form -->
                             
                             <!-- <form action="#" method="post"> -->
+                                 
                                 <div class="row form-group">
                                     <div class="col-4 col-md-8">
                                         <div class="form-group">
@@ -57,6 +58,42 @@
                                     <label>No Telp / HP</label>
                                     <input type="text" class="form-control" id="contact-name" placeholder="<?php echo $peserta['telp_peserta']; ?>" disabled>
                                 </div>
+                                <div class="row form-group">
+                                    <div class="col-6 col-md-6">
+                                         <div class="form-group">
+                                           <input type="text" class="form-control" id="contact-name" value="Status Pembayaran" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-6">
+                                        <div class="form-group">
+                                            <?php
+                                            if($peserta['bill']==0)
+                                            {
+                                                ?>
+                                                <div class="form-group">
+                                                <button style="color: red" type="button" class="btn btn-danger col-md-12 form-control">Belum Ada Bukti</button>
+                                                </div>
+                                                <?php
+                                            }
+                                            else if($peserta['bill']==1)
+                                            {
+                                                ?>
+                                               <div class="form-group">
+                                                <button style="color: yellow" type="button" class="btn btn-danger col-md-12 form-control">Sedang Diverifikasi</button>
+                                                </div>
+                                                </div><?php
+                                            }
+                                            else
+                                            {
+                                                ?>
+                                               <div class="form-group">
+                                                <button style="color: green" type="button" class="btn btn-danger col-md-12 form-control">Pembayaran Lunas</button>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+
                             <!-- </form> -->
                         </div>
                     </div>

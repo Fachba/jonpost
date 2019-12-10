@@ -103,7 +103,7 @@
                             {
                                 ?>
                                 <div class="form-group">
-                                <button type="button" class="btn btn-warning col-md-12">Pembayaran Lunas</button>
+                                <button type="button" class="btn btn-warning col-md-12">Sedang Diverifikasi</button>
                                 </div>
                                 </div><?php
                             }
