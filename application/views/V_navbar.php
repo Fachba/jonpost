@@ -151,7 +151,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="<?php echo site_url('Dashboard') ?>">
                             <img src="<?php echo base_url() ?>/assets/images/icon/logo-white.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -186,6 +186,12 @@
                             </ul>
                         </li>
                         <?php } ?>
+                            <li class="has-sub">
+                                <a href="<?php echo site_url('Dashboard') ?>">
+                                    <i class="fas fa-tachometer-alt"></i>Dashboard
+                                    <span class="bot-line"></span>
+                                </a>
+                            </li>
                             <li class="has-sub">
                                 <a href="<?php echo site_url('Acara') ?>">
                                     <i class="fas fa-list-alt"></i>Postingan
