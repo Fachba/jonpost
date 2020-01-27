@@ -207,17 +207,6 @@ class Acara extends CI_Controller {
                 $this->image_lib->initialize($configer);
                 $this->image_lib->resize();
                 
-                $res=$this->M_acara->acaraidmember($kode)->result();
-                if ($res)
-                {
-                    $row = $res[0]; 
-                    $gambar=$row->gambar;
-                    if ($gambar!=""&&$gambar!=" ")
-                    {
-                        unlink("./assets/images/acara/".$gambar);   
-                    }
-                }
-
                 $this->M_acara->edit($kode);
                 redirect('Acara/index','refresh');
             }
