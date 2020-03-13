@@ -13,18 +13,32 @@
     <title>Sign Up Jonpost</title>
 
     <?php include 'header.php'; ?>
-    <?php 
-       if ($ket=="detail")
-       {
+    <?php
+        $urisegment=$this->uri->segment(3); 
+        if ($ket=="detail")
+        {
             $label="disabled";
            
-       }
-       else
-       {
+        }
+        else
+        {
             $label="";
            
-       }
-    $urisegment=$this->uri->segment(3);
+        }
+        if ($ket=="tambah")
+        {
+            $url_kembali='Posting';
+            $tombol_simpan="Daftar";
+            $url_simpan='Login/registrasi/';
+            // echo form_open_multipart('Login/registrasi/');
+        }
+        elseif ($ket=="edit")
+        {
+            $url_kembali='Dashboard';
+            $url_simpan='Member/edit/'.$urisegment.'';
+            $tombol_simpan="Simpan";
+            // echo form_open_multipart('Member/edit/'.$urisegment.'');
+        }
     ?>
 
 </head>
@@ -44,14 +58,7 @@
                                     <small> Registrasi</small>
                                 </div>
                                 <?php
-                                    if ($ket=="tambah")
-                                    {
-                                        echo form_open_multipart('Login/registrasi/');
-                                    }
-                                    elseif ($ket=="edit")
-                                    {
-                                        echo form_open_multipart('Member/edit/'.$urisegment.'');
-                                    }
+                                    echo form_open_multipart($url_simpan);
                                 ?>
                                 <?php echo validation_errors(); ?>
                                 <div class="card-body card-block">
@@ -127,18 +134,12 @@
                                         <div class="row form-group">
                                             <div class="col-md-6 col-xs-6">
                                                 <div class="form-group">
-                                                <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
+                                                <button type="submit" class="btn btn-success btn-lg btn-block"><?php echo $tombol_simpan ?></button>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-xs-6">
                                                 <div class="form-group">
-                                                <?php if ($ket=="tambah"){?>
-                                                <a class="col-12" href="<?php echo site_url('Posting') ?>">
-                                                <?php }else{ ?>
-                                                <a class="col-12" href="<?php echo site_url('Dashboard') ?>">
-                                                <?php } ?>
-                                                <button type="reset" class="btn btn-danger btn-lg btn-block">Kembali</button>
-                                                </a>
+                                                <button type="reset" class="btn btn-danger btn-lg btn-block" onclick="location.href='<?php echo site_url($url_kembali) ?>'">Kembali</button>
                                                 </div>
                                             </div>
                                         </div>
