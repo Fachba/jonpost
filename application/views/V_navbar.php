@@ -4,7 +4,7 @@
                 <div class="header3-wrap">
                     <div class="header__logo">
                         <a href="<?php echo site_url('Dashboard') ?>">
-                            <img src="<?php echo base_url() ?>/assets/images/icon/logo-white.png" alt="CoolAdmin" />
+                            <img src="<?php echo base_url() ?>/assets/jon/jo.png" alt="CoolAdmin" />
                         </a>
                     </div>
 

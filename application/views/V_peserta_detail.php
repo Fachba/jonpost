@@ -17,6 +17,7 @@
                 $required="";
            }
         $urisegment=$this->uri->segment(3);
+
         ?>
 
 
@@ -92,14 +93,7 @@
                                     </div>
 
                                     <?php
-                                        if ($ket=="tambah")
-                                        {
                                             echo form_open_multipart('Peserta/');
-                                        }
-                                        elseif ($ket=="edit")
-                                        {
-                                            echo form_open_multipart('Peserta/');
-                                        }
                                     ?>
                                     <?php echo validation_errors(); ?>
                                     <div class="card-body card-block">
@@ -151,18 +145,21 @@
                                     </div>
 
                                     <div class="card-footer">
-                                    <center>
-                                         <?php if($ket!="detail"){?>
-                                        <button type="submit" class="btn btn-success btn-lg " >
-                                            <i class="fa fa-dot-circle-o"></i> Tambahkan
-                                        </button>
-                                        <?php } ?>
-                                        <a href="<?php echo site_url('peserta') ?>">
-                                        <button type="reset" class="btn btn-danger btn-lg ">
-                                            <i class="fa fa-ban"></i> Batal / Kembali
-                                        </button>
-                                        </a>
-                                    </center>
+                                        <center>
+                                        <div class="row form-group">
+                                        <div class="col-md-6 col-xs-12">
+                                            <?php if($ket!="detail"){?>
+                                            <button type="submit" class="btn btn-success btn-lg " >
+                                                <i class="fa fa-dot-circle-o"></i> Tambahkan
+                                            </button>
+                                            <?php } ?>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12">
+                                            <button type="reset" class="btn btn-danger btn-lg " onclick="location.href='<?php echo site_url('Peserta') ?>'">
+                                                <i class="fa fa-ban"></i> Batal / Kembali
+                                            </button>
+                                        </div>
+                                        </div>
                                     </div>
                                   <?php echo form_close(); ?>  
                                 </div>

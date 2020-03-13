@@ -52,9 +52,7 @@
                                         <?php echo form_close(); ?>
                                     </div>
                                     <div class="col-md-6 col-xs-12">
-                                        <a class="col-12" href="<?php echo site_url('Posting') ?>">
-                                         <button type="button" class="au-btn btn-info au-btn--block ">Kembali</button>
-                                        </a>
+                                         <button type="button" class="au-btn btn-info au-btn--block " onclick="location.href='<?php echo site_url('Posting') ?>'">Kembali</button>
                                     </div>
                                 </div>
                             <!-- </form> -->
