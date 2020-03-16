@@ -27,10 +27,7 @@
                         </div>
                         <div class="login-form">
                             
-                            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">
-                            <a href="<?php echo site_url('Posting') ?>">
-                            Kembali
-                        	</a>
+                            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" onclick="location.href='<?php echo site_url('Posting') ?>'">Maaf Link Pendaftaran Non Aktif, Kembali
                        		</button>
                             
                         </div>
