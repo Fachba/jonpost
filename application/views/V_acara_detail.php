@@ -219,7 +219,7 @@
                                             <div class="form-group">
                                                  <?php if($ket!="detail"){?>
                                                 <button type="submit" class="btn btn-success btn-lg btn-block" >
-                                                    <i class="fa fa-dot-circle-o"></i> Tambahkan
+                                                    <i class="fa"></i> Tambahkan
                                                 </button>
                                                 <?php } ?>
                                             </div>
@@ -227,7 +227,7 @@
                                         <div class="col-md-6 col-xs-12">
                                             <div class="form-group">
                                                 <button type="reset" class="btn btn-danger btn-lg btn-block" onclick="location.href='<?php echo site_url('Acara') ?>'">
-                                                    <i class="fa fa-ban"></i> Batal / Kembali
+                                                    <i class="fa"></i> Batal / Kembali
                                                 </button>
                                             </div>
                                         </div>
