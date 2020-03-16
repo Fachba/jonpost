@@ -11,6 +11,7 @@ class Member extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->model('M_member');
+		$this->load->library('Mailer');
 
 		$idm=$this->session->userdata('idm');
 		if ($idm==null)
@@ -93,5 +94,13 @@ class Member extends CI_Controller {
     {
         $this->M_member->hapus($value);        
         redirect('Member/index','refresh');     
+    }
+
+    public function Konfirmasi()
+    {
+    	$email='fachrulsecond@gmail.com';
+    	$kirim = new Mailer;
+    	$hasil=$kirim->send($email);
+    	var_dump($hasil);
     }
 }

@@ -12,7 +12,7 @@
                         <ul class="list-unstyled">
                             <li class="has-sub">
                                 <a href="<?php echo site_url('Dashboard') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Dashboard
+                                    <i class="fas fa-th"></i>Dashboard
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
@@ -20,7 +20,7 @@
                             <?php if ($master!=0){?>
                             <li class="has-sub">
                                 <a href="#">
-                                    <i class="fas fa-tachometer-alt"></i>Master Data
+                                    <i class="fas fa-archive"></i>Master Data
                                     <span class="bot-line"></span>
                                 </a>
                                 <ul class="header3-sub-list list-unstyled">
@@ -53,7 +53,7 @@
                             </li>
                             <li class="has-sub">
                                 <a href="<?php echo site_url('Posting') ?>">
-                                    <i class="fas fa-desktop"></i>Website
+                                    <i class="fas fa-globe"></i>Website
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
@@ -152,7 +152,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="<?php echo site_url('Dashboard') ?>">
-                            <img src="<?php echo base_url() ?>/assets/images/icon/logo-white.png" alt="CoolAdmin" />
+                            <img src="<?php echo base_url() ?>/assets/jon/jo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -169,7 +169,7 @@
                         <?php if ($master!=0){?>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Master Data</a>
+                                <i class="fas fa-archive"></i>Master Data</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
                                         <a href="<?php echo site_url('Member') ?>">Member</a>
@@ -188,7 +188,7 @@
                         <?php } ?>
                             <li class="has-sub">
                                 <a href="<?php echo site_url('Dashboard') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Dashboard
+                                    <i class="fas fa-th"></i>Dashboard
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
@@ -206,7 +206,7 @@
                             </li>
                             <li class="has-sub">
                                 <a href="<?php echo site_url('Posting') ?>">
-                                    <i class="fas fa-desktop"></i>Website
+                                    <i class="fas fa-globe"></i>Website
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
